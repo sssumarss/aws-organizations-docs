@@ -14,7 +14,11 @@ Follow these recommendations to help protect the security of the member accounts
 
 ## Use a group email address for all member account root users<a name="best-practices_member-acct_email-address"></a>
 + Use an email address that is managed by your business\. Do not use a public email provider or one that is managed by a third party\.
-+ Use an email address that forwards received messages directly to a list of senior business managers\. In the event that AWS needs to contact the owner of the account, for example, to confirm access, the email is distributed to multiple parties\. This approach helps to reduce the risk of delays in responding, even if individuals are on vacation, out sick, or leave the business\.
++ Use an alias email address that forwards received messages directly to a list of senior business managers\. In the event that AWS needs to contact the owner of the account, for example, to confirm access, the email is distributed to multiple parties\. This approach helps to reduce the risk of delays in responding, even if individuals are on vacation, out sick, or leave the business\. The main reason for using alias is that it wouldn’t be typically owned by an individual but by a group of individuals within the organisation. Root account Email IDs  must be unique for each AWS account. For example: One can follow the following approach, create one alias aws-subaccount@yourdomain.com . Sub accounts now can use aws-subaccount+01@yourdomain.com; aws-subaccount+02@yourdomain.com; aws-subaccount+03@yourdomain.com; aws-subaccount+poc@yourdomain.com
+ 
+Effectively, all the above 4 email IDs are same as aws-subaccount@yourdomain.com . Any email sent to those email ID ending with +xxx@yourdomain.com will go to aws-subaccount@yourdomain.com. However, please do check that your email server supports that format of email ID.
+ 
+If the above approach is not supported, then you will have to create separate alias for each of the sub accounts (AWS) e.g. aws-subaccount-poc@yourdomain.com; aws-subaccount-01@yourdomain.com
 
 ## Use a complex password for member account root user<a name="best-practices_mbr-acct_complex-password"></a>
 + The security of your account's root user depends on the strength of its password\. We recommend that you use a password that is long, complex, and not used anywhere else\. Numerous password managers and complex password generation algorithms and tools can help you achieve these goals\.
